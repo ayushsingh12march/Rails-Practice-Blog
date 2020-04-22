@@ -9,6 +9,10 @@ class ArticlesController < ApplicationController
   #destroy
 
   #Note :- Rails passes all instance variables to views
+  def index
+    @articles = Article.all
+  end
+
   def show
     @article = Article.find(params[:id])
   end
