@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rails new <aplication_name>
+* rails generate controller Welcome index - Welcome controller created with welcome/index.html.erb
+* root 'welcome#index' creates welcome controller index methor rendering as root
+* rails routes
