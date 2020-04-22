@@ -1,7 +1,7 @@
 <h1>New Articles#new</h1>
 <p>Find me in app/views/articles/new.html.erb</p>
-
-<%= form_with scope: :article, local: true do |form|%>
+<%# by default on submit it goes to same path so we add url: property %>
+<%= form_with scope: :article,url: articles_path, local: true do |form|%>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
