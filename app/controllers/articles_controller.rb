@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-
+  validates :title, presence: true, length: { minimum: 5 }
   #index
   #show /1
   #new
@@ -24,8 +24,12 @@ class ArticlesController < ApplicationController
     # @article = Article.new(params[:article])  -> will throw forbidden because of security, specify which params
     # @article = Article.new(params.require(:article).permit(:title, :text))
     @article = Article.new(article_params)
-    @article.save
-    redirect_to @article
+
+    if @article.save
+      redirect_to @article
+    else
+      render "new"
+    end
     # render plain: params[:article].inspect
   end
 
