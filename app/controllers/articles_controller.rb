@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  validates :title, presence: true, length: { minimum: 5 }
+  # validates :title, presence: true, length: { minimum: 5 }
+
   #index
   #show /1
   #new
@@ -18,6 +19,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
   end
 
   def create
