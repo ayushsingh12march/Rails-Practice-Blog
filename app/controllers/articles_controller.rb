@@ -22,6 +22,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     # @article = Article.new(params[:article])  -> will throw forbidden because of security, specify which params
     # @article = Article.new(params.require(:article).permit(:title, :text))
@@ -33,6 +37,16 @@ class ArticlesController < ApplicationController
       render "new"
     end
     # render plain: params[:article].inspect
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render "edit"
+    end
   end
 
   private
